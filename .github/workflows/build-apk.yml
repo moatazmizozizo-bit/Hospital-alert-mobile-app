@@ -22,12 +22,12 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
       
-    - name: Install and Use Gradle 8.0
+    - name: Install and Use Gradle 8.4
       run: |
-        # Download and install Gradle 8.0
-        wget -q https://services.gradle.org/distributions/gradle-8.0-bin.zip
-        unzip -q gradle-8.0-bin.zip
-        export PATH=$PWD/gradle-8.0/bin:$PATH
+        # Download and install Gradle 8.4
+        wget -q https://services.gradle.org/distributions/gradle-8.4-bin.zip
+        unzip -q gradle-8.4-bin.zip
+        export PATH=$PWD/gradle-8.4/bin:$PATH
         
         # Verify Gradle version
         gradle --version
