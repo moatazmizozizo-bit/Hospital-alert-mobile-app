@@ -8,25 +8,31 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
+      
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
-
+        
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
-
-    - name: Build APK with Gradle Wrapper
+      
+    - name: Build APK with Gradle
       run: |
-        chmod +x ./gradlew
-        ./gradlew :app:assembleDebug
-
+        # Install Gradle 8.0 specifically
+        wget https://services.gradle.org/distributions/gradle-8.0-bin.zip -P /tmp
+        unzip -q /tmp/gradle-8.0-bin.zip -d /tmp/gradle/
+        export PATH=/tmp/gradle/gradle-8.0/bin:$PATH
+        
+        # Build the APK
+        cd app
+        gradle assembleDebug --no-daemon
+        
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
