@@ -1,1 +1,8 @@
-
+<resources>
+    <string name="app_name">Hospital Alert Agent</string>
+    <string name="service_notification_title">Hospital Alert Agent</string>
+    <string name="service_notification_text">Listening for emergency alerts</string>
+    <string name="location_name">Location Name</string>
+    <string name="location_hint">e.g., Emergency Room, ICU, Main Ward</string>
+    <string name="save_configuration">Save Configuration</string>
+</resources>
