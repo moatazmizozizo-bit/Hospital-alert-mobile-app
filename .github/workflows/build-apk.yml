@@ -22,9 +22,17 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
       
-    - name: Build APK with Correct Gradle
+    - name: Install and Use Gradle 8.0
       run: |
-        # Use the system Gradle but with correct configuration
+        # Download and install Gradle 8.0
+        wget -q https://services.gradle.org/distributions/gradle-8.0-bin.zip
+        unzip -q gradle-8.0-bin.zip
+        export PATH=$PWD/gradle-8.0/bin:$PATH
+        
+        # Verify Gradle version
+        gradle --version
+        
+        # Build the APK
         cd app
         gradle assembleDebug --no-daemon --stacktrace
         
