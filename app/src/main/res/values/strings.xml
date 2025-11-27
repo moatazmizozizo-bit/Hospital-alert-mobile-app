@@ -1,1 +1,14 @@
-
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hospital Alert Agent</string>
+    <string name="service_notification_title">Hospital Alert Agent</string>
+    <string name="service_notification_text">Listening for emergency alerts</string>
+    <string name="location_name">Location Name</string>
+    <string name="location_hint">e.g., Emergency Room, ICU, Main Ward</string>
+    <string name="save_configuration">Save Configuration</string>
+    <string name="connection_status_connected">✅ Ready to Receive Alerts</string>
+    <string name="connection_status_disconnected">❌ Not Connected</string>
+    <string name="listening_on_port">Listening on port 3002</string>
+    <string name="check_network_connection">Check network connection</string>
+    <string name="how_it_works">How It Works</string>
+</resources>
